@@ -106,6 +106,7 @@
       width: 20px;
       height: 2px;
       background-color: #1C1C1E;
+      transition: transform 0.2s;
     }
     &:after {
       content: '';
@@ -114,6 +115,18 @@
       width: 20px;
       height: 2px;
       background-color: #1C1C1E;
+      transition: transform 0.2s;
+    }
+  }
+  .burger-opened {
+    span {
+      display: none;
+    }
+    &:before {
+      transform: translateY(8px) rotate(-405deg);
+    }
+    &:after {
+      transform: translateY(-8px) rotate(225deg);
     }
   }
 }
@@ -129,6 +142,7 @@
   }
   .navbar {
     position: fixed;
+    z-index: 100;
     left: 0;
     background: #FFFFFF;
     transform: translateX(-77%);

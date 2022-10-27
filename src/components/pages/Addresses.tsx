@@ -1,5 +1,5 @@
 import React, {ChangeEvent, useState } from 'react';
-import './Addresses.scss';
+import './../CSS/Addresses.scss';
 import * as ImIcons from "react-icons/im";
 
 const Addresses = () => {
@@ -10,7 +10,6 @@ const Addresses = () => {
 
     const url = "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address";
     const token = "f56015744c9fde1ec2cc167824a6663629afded6";
-
 
     const options = {
         method: "POST",
@@ -37,10 +36,9 @@ const Addresses = () => {
         fetch(url, options)
             .then(response => response.json())
             .then(result => {
-                console.log(result.suggestions)
                 setData(result.suggestions)
             })
-            .catch(error => console.log("error", error));
+            .catch(error => alert(error));
     }
 
     return (
@@ -58,7 +56,8 @@ const Addresses = () => {
             {data.length > 0 && <div className="search__result">
                 <div className="search__result-title">Адреса</div>
                 <div className="search__result-data">
-                    {data.map((item, index) => <div className="search__result-address" key={index}>{item.value}</div>)}
+                    {data.map((item, index) =>
+                        <div className="search__result-address" key={index}>{item.value}</div>)}
                 </div>
             </div>}
         </div>

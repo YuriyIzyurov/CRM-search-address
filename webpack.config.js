@@ -1,5 +1,10 @@
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path');
+
+function resolve(dir) {
+    return path.resolve(__dirname, dir);
+}
 
 module.exports = {
     plugins: [
@@ -50,6 +55,6 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.tsx','.ts','.jsx','.js']
+        extensions: ['.tsx','.ts','.jsx','.js'],
     }
 }

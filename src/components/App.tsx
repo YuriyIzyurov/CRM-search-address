@@ -1,14 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import * as FaIcons from "react-icons/fa"
 import './CSS/App.scss'
-// @ts-ignore
 import Logo from './assets/Logo.svg'
-import Navbar from "./Navbar/Navbar";
 import Home from './pages/Home';
 import Addresses from './pages/Addresses';
+import Navbar from './Navbar/Navbar';
+
+
 
 const App = () => {
+    const [isBurgerActive, setBurgerActive] = useState<boolean>(false)
 
     return (
         <>
@@ -23,11 +25,11 @@ const App = () => {
                         <span>Имя Фамилия</span>
                     </div>
                 </header>
-                <main className="content">
-                    <Navbar/>
+                <main className="content" onClick={() => setBurgerActive(false)}>
+                    <Navbar isBurgerActive={isBurgerActive} setBurgerActive={setBurgerActive}/>
                     <Routes>
-                        <Route path='/'  element={<Home/>} />
-                        <Route path='/address' element={<Addresses/>} />
+                      <Route path='/'  element={<Home/>} />
+                      <Route path='/address' element={<Addresses/>} />
                     </Routes>
                 </main>
             </Router>

@@ -101,9 +101,17 @@
 }
 @media only screen and (max-width: 768px) {
   .search__input input {
-    max-width: inherit;
+    min-width: inherit;
   }
   .search{
     padding-left: 100px;
+  }
+}
+@media only screen and (max-width: 560px) {
+  .search__input input {
+    font-size: 15px;
+  }
+  .search__input button {
+    min-width: 50px;
   }
 }

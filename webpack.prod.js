@@ -3,6 +3,7 @@ const {merge} = require('webpack-merge');
 const webpackConfig = require('./webpack.config');
 
 module.exports = merge(webpackConfig, {
+    mode: "production",
     entry: './src/index.tsx',
     output: {
         path: path.join(__dirname, '/dist'),
