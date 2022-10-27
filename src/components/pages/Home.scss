@@ -1,0 +1,28 @@
+.home {
+  padding: 32px;
+  height: calc(100vh - 100px);
+  overflow: auto;
+  &__title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  &__description {
+    font-weight: 500;
+  }
+  &__text {
+    padding-top: 24px;
+    color: #000000;
+    p {
+      margin-bottom: 24px;
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .home{
+    padding-left: 100px;
+  }
+}
