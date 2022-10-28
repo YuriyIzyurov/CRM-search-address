@@ -50,6 +50,10 @@
         margin-right: 16px;
       }
     }
+    .btn-disabled {
+      background: #6c6c6c;
+      cursor: default;
+    }
   }
   &__result {
     max-width: 1076px;
@@ -81,6 +85,7 @@
     color: red;
   }
 }
+
 @media only screen and (max-width: 900px) {
   .search__input button span{
     display: none;

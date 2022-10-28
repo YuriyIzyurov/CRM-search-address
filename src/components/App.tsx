@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import * as FaIcons from "react-icons/fa"
+import * as FaIcons from 'react-icons/fa'
 import './CSS/App.scss'
 import Logo from './assets/Logo.svg'
 import Home from './pages/Home';
@@ -15,17 +15,17 @@ const App = () => {
     return (
         <>
             <Router>
-                <header className="header">
-                    <div className="header__logo">
-                        <img src={Logo} alt="logo"/>
+                <header className='header'>
+                    <div className='header__logo'>
+                        <img src={Logo} alt='logo'/>
                         <span>Wrench CRM</span>
                     </div>
-                    <div className="header__login">
+                    <div className='header__login'>
                         <FaIcons.FaRegUserCircle/>
                         <span>Имя Фамилия</span>
                     </div>
                 </header>
-                <main className="content" onClick={() => setBurgerActive(false)}>
+                <main className='content' onClick={() => setBurgerActive(false)}>
                     <Navbar isBurgerActive={isBurgerActive} setBurgerActive={setBurgerActive}/>
                     <Routes>
                       <Route path='/'  element={<Home/>} />

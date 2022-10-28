@@ -1,6 +1,6 @@
 import React, {Dispatch, useState } from 'react';
 import './../CSS/NavBar.scss'
-import * as FaIcons from "react-icons/fa";
+import * as FaIcons from 'react-icons/fa';
 import { NavLink} from 'react-router-dom';
 import {NavbarData} from './NavbarData';
 
@@ -37,7 +37,7 @@ const Navbar:React.FC<PropsType> = ({isBurgerActive, setBurgerActive}) => {
                                 {item.submenu ?
                                     <>
                                         <div
-                                            className="nav-item-menu"
+                                            className='nav-item-menu'
                                             onClick={() => {item.submenu && setSubIsOpened(!isOpened)}}
                                         >
                                             {item.icon}

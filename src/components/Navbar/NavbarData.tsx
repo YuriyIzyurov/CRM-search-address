@@ -1,8 +1,8 @@
 import React from 'react'
-import * as ImIcons from "react-icons/im"
-import * as FaIcons from "react-icons/fa"
-import * as FiIcons from "react-icons/fi"
-import * as BiIcons from "react-icons/bi"
+import * as ImIcons from 'react-icons/im'
+import * as FaIcons from 'react-icons/fa'
+import * as FiIcons from 'react-icons/fi'
+import * as BiIcons from 'react-icons/bi'
 
 export const NavbarData = [
     {
