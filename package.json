@@ -1,11 +1,14 @@
 {
   "name": "wrenchcrm",
+  "homepage": "https://yuriyizyurov.github.io/CRM-search-address/",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --hot --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +29,7 @@
     "@types/react-dom": "^18.0.8",
     "babel-loader": "^9.0.0",
     "css-loader": "^6.7.1",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
     "postcss": "^8.4.18",
