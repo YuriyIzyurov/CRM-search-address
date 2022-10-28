@@ -1,6 +1,7 @@
-import React, {ChangeEvent, useState } from 'react';
+import React, {ChangeEvent, KeyboardEvent, useState } from 'react';
 import './../CSS/Addresses.scss';
 import * as ImIcons from 'react-icons/im';
+import {makeLogger} from "ts-loader/dist/logger";
 
 const Addresses = () => {
 
@@ -25,6 +26,13 @@ const Addresses = () => {
 
     const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setValue(e.currentTarget.value)
+    }
+    const changeEnterHandler = (e: KeyboardEvent<HTMLInputElement>) => {
+        if(e.key === 'Enter') {
+            const result = (e.target as HTMLInputElement).value
+            setValue(result)
+            submitHandler()
+        }
     }
     const submitHandler = async () => {
         if(value.length < 4) {
@@ -52,7 +60,12 @@ const Addresses = () => {
             <h1 className='search__title'>Поиск адресов</h1>
             <span className='search__description'>Введите интересующий вас адрес</span>
             <div className='search__input'>
-                <input type='text' placeholder='Введите интересующий вас адрес' onChange={changeHandler}/>
+                <input
+                    type='text'
+                    placeholder='Введите интересующий вас адрес'
+                    onChange={changeHandler}
+                    onKeyDown={changeEnterHandler}
+                />
                 <button className={isFetching ? 'btn-disabled' : ''} onClick={submitHandler} disabled={isFetching}>
                     <ImIcons.ImSearch />
                     <span>Поиск</span>
